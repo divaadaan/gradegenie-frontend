@@ -1,15 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import ClassroomSetup from './views/ClassroomSetup';
 import ReportingSession from './views/ReportingSession';
 import Extract from './views/Extract';
-import { useAuth } from './contexts/AuthContext';
+//import { useAuth } from './contexts/AuthContext';
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useAuth();
-  return user ? children : <Navigate to="/login" />;
+  return children; // Allow access to all routes for now
 };
 
 function App() {

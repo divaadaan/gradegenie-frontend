@@ -1,12 +1,17 @@
 import React from 'react';
 import { Box, Button, Typography, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+//import { useAuth } from '../contexts/AuthContext';
 
-const Dashboard = () => {
-  const navigate = useNavigate();
-  const { logout, user } = useAuth();
-  
+  const Dashboard = () => {
+    const navigate = useNavigate();
+    const logout = () => {
+      console.log("Logging out...");
+      navigate("/login"); // Redirect to login or another page
+    };
+
+    const user = { name: "Guest" }; // Temporary user placeholder
+
   return (
     <Container>
       <Box sx={{ mt: 4 }}>
